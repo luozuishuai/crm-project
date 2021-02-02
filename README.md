@@ -54,6 +54,6 @@ SpringBean类从SpringIOC容器中获取对象
 
 @Valid(group = )实现分组校验 - 多表操作业务处理 - 树形结构数据回显
 
-登录用户封装 验证 - easy-captcha实现验证码 - 缓存验证码和用户信息到Redis - jtw生成token保存uuid - 前端请求头设置token - 配置拦截器验证登录状态
+登录用户封装 验证 - easy-captcha实现验证码 - 缓存验证码和用户信息到Redis - jtw生成token保存uuid - 前端请求头设置token - 配置拦截器验证登录状态 - 登录超时配置
 
 根据登录用户拥有的权限动态生成对应的菜单 - 获取树形动态菜单数据 - 前端回调渲染
