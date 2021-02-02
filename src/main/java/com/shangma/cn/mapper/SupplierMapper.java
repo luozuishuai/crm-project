@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface SupplierMapper extends BaseMapper<Supplier,Long>{
+public interface SupplierMapper extends BaseMapper<Supplier>{
 
 }

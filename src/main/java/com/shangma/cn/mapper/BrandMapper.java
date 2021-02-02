@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface BrandMapper extends BaseMapper<Brand,Long>{
+public interface BrandMapper extends BaseMapper<Brand>{
 
 }

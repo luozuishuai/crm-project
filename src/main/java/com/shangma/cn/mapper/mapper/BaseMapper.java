@@ -6,12 +6,12 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface BaseMapper <T,ID>{
+public interface BaseMapper <T>{
     long countByExample(Object example);
 
     int deleteByExample(Object example);
 
-    int deleteByPrimaryKey(ID id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(T record);
 
@@ -19,7 +19,7 @@ public interface BaseMapper <T,ID>{
 
     List<T> selectByExample(Object example);
 
-    T selectByPrimaryKey(ID id);
+    T selectByPrimaryKey(Long id);
 
     int updateByExampleSelective(@Param("record") T record, @Param("example") Object example);
 

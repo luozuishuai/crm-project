@@ -8,6 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class BrandServiceImpl extends BaseServiceImpl<Brand,Long> implements BrandService {
+public class BrandServiceImpl extends BaseServiceImpl<Brand> implements BrandService {
 
 }

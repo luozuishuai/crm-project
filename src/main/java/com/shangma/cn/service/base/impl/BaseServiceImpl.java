@@ -3,27 +3,27 @@ package com.shangma.cn.service.base.impl;
 import com.github.pagehelper.PageInfo;
 import com.shangma.cn.mapper.mapper.BaseMapper;
 import com.shangma.cn.service.base.BaseService;
+import com.shangma.cn.common.untils.ReflectionUtils;
 import com.shangma.cn.vo.PageVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 
-public class BaseServiceImpl<T,ID> implements BaseService<T,ID>{
+public class BaseServiceImpl<T> implements BaseService<T>{
 
     @Autowired
-    private BaseMapper<T,ID> baseMapper;
+    private BaseMapper<T> baseMapper;
 
     @Override
-    public PageVo<T> findPage() {
+    public PageVo<T> findAll() {
         List<T> list = baseMapper.selectByExample(null);
         return setPageVo(list);
     }
 
     @Override
-    public PageVo<T> findPage(Object example) {
+    public PageVo<T> findAll(Object example) {
         List<T> list = baseMapper.selectByExample(example);
         return setPageVo(list);
     }
@@ -39,22 +39,25 @@ public class BaseServiceImpl<T,ID> implements BaseService<T,ID>{
     }
 
     @Override
-    public T findById(ID id) {
+    public T findById(Long id) {
         return baseMapper.selectByPrimaryKey(id);
     }
 
     @Override
     public int addEntity(T entity) {
+        ReflectionUtils.invokeMethod(entity,"doSetDate",null,null);
         return baseMapper.insert(entity);
+
     }
 
     @Override
     public int updateEntity(T entity) {
+        ReflectionUtils.invokeMethod(entity,"doSetDate",null,null);
         return baseMapper.updateByPrimaryKey(entity);
     }
 
     @Override
-    public int deleteEntity(ID id) {
+    public int deleteEntity(Long id) {
         return baseMapper.deleteByPrimaryKey(id);
     }
 
@@ -74,8 +77,10 @@ public class BaseServiceImpl<T,ID> implements BaseService<T,ID>{
 
     @Override
     @Transactional
-    public int batchDeleteByIds(List<ID> ids) {
+    public int batchDeleteByIds(List<Long> ids) {
         ids.forEach(item -> baseMapper.deleteByPrimaryKey(item));
         return 1;
     }
+
+
 }

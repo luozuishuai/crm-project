@@ -6,18 +6,18 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface BaseService <T,ID>{
+public interface BaseService <T>{
 
     /**
      * 分页查询
      * @return
      */
-    PageVo<T> findPage();
+    PageVo<T> findAll();
 
     /**
      * 有条件的分页查询
      */
-    PageVo<T> findPage(Object example);
+    PageVo<T> findAll(Object example);
 
     /**
      * 封装分页数据
@@ -27,7 +27,7 @@ public interface BaseService <T,ID>{
     /**
      * 通过id查询
      */
-    T findById(ID id);
+    T findById(Long id);
 
     /**
      * 添加操作
@@ -42,7 +42,7 @@ public interface BaseService <T,ID>{
     /**
      * 删除操作
      */
-    int deleteEntity(ID id);
+    int deleteEntity(Long id);
 
     /**
      * 批量添加
@@ -57,5 +57,7 @@ public interface BaseService <T,ID>{
     /**
      * 批量删除
      */
-    int batchDeleteByIds(List<ID> ids);
+    int batchDeleteByIds(List<Long> ids);
+
+
 }

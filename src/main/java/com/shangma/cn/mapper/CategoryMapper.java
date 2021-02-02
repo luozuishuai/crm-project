@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface CategoryMapper extends BaseMapper<Category,Long>{
+public interface CategoryMapper extends BaseMapper<Category>{
 
 }

@@ -4,5 +4,15 @@ spring:
     url: jdbc:mysql://luozuishuai.mysql.rds.aliyuncs.com:3306/business
     username: root
     password: Lgb58642626
+  mail:
+    host: smtp.126.com
+    username: luozuishuai@126.com
+    password: ETESYGVWNUSBNXPN
+  task:
+    execution:
+      pool:
+        core-size: 50
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+server:
+  port: 9090

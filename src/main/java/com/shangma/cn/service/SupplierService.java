@@ -8,6 +8,6 @@ import java.util.List;
 /**
  * 供应商相关接口
  */
-public interface SupplierService extends BaseService<Supplier,Long>{
+public interface SupplierService extends BaseService<Supplier>{
 
 }
