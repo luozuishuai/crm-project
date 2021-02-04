@@ -1,13 +1,13 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://luozuishuai.mysql.rds.aliyuncs.com:3306/business
+    url: jdbc:mysql://localhost:3306/business
     username: root
-    password: Lgb58642626
+    password: root
   mail:
     host: smtp.126.com
-    username: luozuishuai@126.com
-    password: ETESYGVWNUSBNXPN
+    username: root
+    password: root
   task:
     execution:
       pool:
